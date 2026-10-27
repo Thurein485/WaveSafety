@@ -1,0 +1,115 @@
+
+:root {
+    --primary-green: #607840;
+    --dark-green: #293a20;
+    --cream: #f4edcf;
+}
+
+.wavesafety-footer {
+    background: var(--dark-green);
+    color: var(--cream);
+}
+
+.footer-logo {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.footer-logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.footer-logo:hover {
+    color: white;
+}
+
+.footer-text {
+    color: #c6d1bb;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-heading {
+    color: var(--cream);
+    font-weight: 700;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a,
+.bottom-link {
+    color: #c6d1bb;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.footer-links a:hover,
+.bottom-link:hover {
+    color: var(--cream);
+}
+
+.footer-social {
+    color: var(--cream);
+    font-size: 19px;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-social:hover {
+    color: white;
+    transform: translateY(-3px);
+}
+
+.safety-card {
+    background: rgba(244, 237, 207, 0.08);
+    border: 1px solid rgba(244, 237, 207, 0.15);
+    transition: background 0.3s ease;
+}
+
+.safety-card:hover {
+    background: rgba(244, 237, 207, 0.12);
+}
+
+.safety-icon {
+    color: var(--cream);
+    font-size: 32px;
+}
+
+.safety-btn {
+    background: var(--cream);
+    color: var(--dark-green);
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.safety-btn:hover {
+    background: var(--primary-green);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.safety-reminder {
+    background: rgba(244, 237, 207, 0.08);
+    border: 1px solid rgba(244, 237, 207, 0.15);
+}
+
+.reminder-icon {
+    color: var(--cream);
+    font-size: 25px;
+}
+
+.footer-bottom {
+    border-color: rgba(244, 237, 207, 0.2) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wavesafety-footer * {
+        transition: none !important;
+    }
+}

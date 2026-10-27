@@ -1,0 +1,388 @@
+:root {
+    --primary-green: #607840;
+    --dark-green: #293a20;
+    --cream: #f4edcf;
+}
+
+/* Navbar */
+.flood-navbar {
+    background: var(--primary-green);
+    margin: 6px 14px 0;
+    padding: 10px 18px;
+    border-radius: 36px;
+    position: relative;
+    z-index: 10;
+}
+
+.flood-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-right: 20px;
+}
+
+.brand-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    min-width: 76px;
+    border-radius: 50%;
+    background: var(--cream);
+    color: #655a2b;
+    font-size: 36px;
+}
+
+.logo-water {
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    font-size: 25px;
+}
+
+.brand-name {
+    display: none;
+    color: #fff;
+    font: bold 27px Georgia, "Times New Roman", serif;
+}
+
+/* Navigation links */
+.flood-navbar .navbar-nav {
+    gap: 12px;
+}
+
+.flood-navbar .nav-link {
+    color: #fff;
+    padding: 12px 9px !important;
+    font: clamp(16px, 1.55vw, 27px) Georgia, "Times New Roman", serif;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.flood-navbar .nav-link:hover,
+.flood-navbar .nav-link:focus {
+    color: var(--cream);
+}
+
+/* Sign up and log in buttons */
+.auth-buttons {
+    margin-left: 12px;
+}
+
+.auth-buttons .btn {
+    min-width: 145px;
+    min-height: 58px;
+    border-radius: 12px;
+    padding: 10px 24px;
+    font: 25px Georgia, "Times New Roman", serif;
+    transition: 0.2s;
+}
+
+.btn-signup {
+    color: #fff;
+    background: var(--dark-green);
+    border: 2px solid var(--dark-green);
+}
+
+.btn-signup:hover {
+    color: var(--cream);
+    background: #1d2b17;
+    border-color: #1d2b17;
+}
+
+.btn-login {
+    color: #111;
+    background: var(--cream);
+    border: 4px solid #111;
+}
+
+.btn-login:hover {
+    color: #111;
+    background: #fff;
+    border-color: #111;
+}
+
+/* Mobile navigation toggle */
+.flood-navbar .navbar-toggler {
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 10px;
+    padding: 8px 10px;
+}
+
+.flood-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(244, 237, 207, 0.3);
+}
+
+.flood-navbar .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* Authentication modals */
+.auth-modal .modal-dialog {
+    max-width: 480px;
+    margin: 1.5rem auto;
+    padding: 0 12px;
+}
+
+.auth-modal .modal-content {
+    overflow: hidden;
+    border: none;
+    border-radius: 24px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.auth-modal-header {
+    display: flex;
+    align-items: flex-start;
+    background: linear-gradient(
+        135deg,
+        var(--primary-green),
+        var(--dark-green)
+    );
+    color: #fff;
+    padding: 30px 30px 26px;
+    border: none;
+}
+
+.auth-modal-header .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+}
+
+.auth-modal-header .btn-close:hover {
+    opacity: 1;
+}
+
+.modal-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.17);
+    font-size: 25px;
+}
+
+.auth-modal-header .modal-title {
+    margin-bottom: 8px;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.auth-modal-header p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.auth-modal .modal-body {
+    padding: 28px 30px 25px;
+    background: #fff;
+}
+
+.auth-modal .form-label {
+    margin-bottom: 8px;
+    color: #263421;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.auth-modal .form-control {
+    min-height: 49px;
+    padding: 12px 14px;
+    border: 1px solid #dce2d7;
+    border-radius: 11px;
+    background: #fafbf8;
+    font-size: 14px;
+}
+
+.auth-modal .form-control:focus {
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(96, 120, 64, 0.15);
+    background: #fff;
+}
+
+.auth-modal .form-control::placeholder {
+    color: #9ba297;
+}
+
+.form-text {
+    display: block;
+    margin-top: 7px;
+    color: #6c7568;
+    font-size: 12px;
+}
+
+.form-feedback {
+    margin-top: 7px;
+    font-size: 13px;
+}
+
+/* Modal submit button */
+.auth-submit {
+    width: 100%;
+    min-height: 51px;
+    border: none;
+    border-radius: 11px;
+    background: var(--primary-green);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.auth-submit:hover {
+    transform: translateY(-1px);
+    background: var(--dark-green);
+    color: #fff;
+}
+
+/* Switch between login and signup */
+.auth-switch {
+    margin: 22px 0 0;
+    color: #6c7568;
+    text-align: center;
+    font-size: 13px;
+}
+
+.text-button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+.text-button:hover {
+    color: var(--dark-green);
+    text-decoration: underline;
+}
+
+/* Medium desktop screens */
+@media (min-width: 1200px) and (max-width: 1550px) {
+    .flood-navbar {
+        padding: 9px 14px;
+    }
+
+    .flood-navbar .navbar-nav {
+        gap: 2px;
+    }
+
+    .flood-navbar .nav-link {
+        padding: 10px 6px !important;
+        font-size: 17px;
+    }
+
+    .brand-logo {
+        width: 62px;
+        height: 62px;
+        min-width: 62px;
+        font-size: 30px;
+    }
+
+    .brand-logo .logo-water {
+        right: 7px;
+        bottom: 7px;
+        font-size: 20px;
+    }
+
+    .flood-brand,
+    .auth-buttons {
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+
+    .auth-buttons .btn {
+        min-width: 95px;
+        min-height: 48px;
+        padding: 8px 13px;
+        font-size: 18px;
+    }
+}
+
+/* Tablets and smaller screens */
+@media (max-width: 1199.98px) {
+    .flood-navbar {
+        padding: 10px 16px;
+        border-radius: 24px;
+    }
+
+    .brand-name {
+        display: inline;
+    }
+
+    .flood-navbar .navbar-collapse {
+        padding: 15px 5px 8px;
+    }
+
+    .flood-navbar .navbar-nav {
+        align-items: stretch !important;
+        gap: 0;
+    }
+
+    .flood-navbar .nav-link {
+        padding: 12px 10px !important;
+        border-radius: 8px;
+        font: 16px Arial, Helvetica, sans-serif;
+    }
+
+    .flood-navbar .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .auth-buttons {
+        margin: 12px 0 0;
+    }
+
+    .auth-buttons .btn {
+        width: 100%;
+        min-height: 48px;
+        font-size: 18px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 575.98px) {
+    .flood-navbar {
+        margin: 6px 8px 0;
+        padding: 8px 12px;
+    }
+
+    .brand-logo {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        font-size: 25px;
+    }
+
+    .brand-logo .logo-water {
+        right: 5px;
+        bottom: 5px;
+        font-size: 17px;
+    }
+
+    .flood-brand {
+        gap: 10px;
+    }
+
+    .brand-name {
+        font-size: 22px;
+    }
+
+    .auth-modal-header {
+        padding: 25px 22px 22px;
+    }
+
+    .auth-modal .modal-body {
+        padding: 24px 22px;
+    }
+
+    .auth-modal-header .modal-title {
+        font-size: 23px;
+    }
+}
