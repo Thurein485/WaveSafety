@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CDN CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Bootstrap CDN Icon Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- AOS CSS Link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Css -->
+    <link rel="stylesheet" href="css/lastest_update.css">
+</head>
+
+<body>
+
+
+    <div class="dashboard_header">
+        <div class="container px-4 py-5">
+            <p class="eyebrow">DISASTER PREPAREDNESS DASHBOARD</p>
+
+            <h1>Myanmar Rainfall <span>Watch.</span></h1>
+
+            <p class="header_description">
+                Monitor rainfall conditions and understand when
+                heavy-rainfall thresholds are reached.
+            </p>
+
+            <div class="region_picker">
+                <label for="region">Select your region</label>
+
+                <select name="region" id="region">
+                    <option value="ayeyarwady">Ayeyarwady</option>
+                    <option value="yangon" selected>Yangon</option>
+                    <option value="rakhine">Rakhine</option>
+                    <option value="tanintharyi">Tanintharyi</option>
+                    <option value="mandalay">Mandalay</option>
+                    <option value="bago">Bago</option>
+                    <option value="sagaing">Sagaing</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="container dashboard_main px-4 py-4">
+
+        <div class="section_heading">
+            <div>
+                <p class="section_kicker">LIVE WEATHER DATA</p>
+                <h2>Rainfall Overview</h2>
+            </div>
+
+            <button id="refresh_data" type="button" class="refresh_button">
+                <i class="bi bi-arrow-clockwise"></i>
+                Refresh
+            </button>
+        </div>
+
+        <div class="row g-4 mb-5">
+            
+            <div class="col-md-6">
+                <div class="metric_card current_card">
+                    <div class="metric_top">
+                        <span class="metric_icon orange_icon">
+                            <i class="bi bi-cloud-rain-heavy"></i>
+                        </span>
+                        <span class="metric_tag">CURRENT</span>
+                    </div>
+
+                    <p class="metric_label">Current Precipitation</p>
+                    <h3 id="precipitation" class="metric_number">Loading...</h3>
+
+                    <p class="metric_note">
+                        Precipitation reported for the current time step.
+                    </p>
+
+                    <p class="metric_note mt-2">
+                        <i class="bi bi-clock"></i>
+                        Last updated: <span id="updated_time">—</span>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="metric_card total_card">
+                    <div class="metric_top">
+                        <span class="metric_icon red_icon">
+                            <i class="bi bi-droplet-half"></i>
+                        </span>
+                        <span class="metric_tag">24-HOUR TOTAL</span>
+                    </div>
+
+                    <p class="metric_label">Rainfall Accumulation</p>
+                    <h3 id="rainfall_24h" class="metric_number">--</h3>
+
+                    <p class="metric_note">
+                        Total precipitation over the past 24 hourly values.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert_panel mb-5">
+            <div class="alert_header">
+                <div>
+                    <p class="section_kicker">THRESHOLD MONITOR</p>
+                    <h2>Heavy-Rainfall Indicator</h2>
+                </div>
+
+                <span class="alert_symbol">
+                    <i class="bi bi-exclamation-triangle-fill"></i>
+                </span>
+            </div>
+
+            <div class="alert_body">
+                <p class="alert_caption">CURRENT INDICATOR STATUS</p>
+
+                <h3 id="flood_risk_percentage" class="risk_status">
+                    Not available
+                </h3>
+
+                <p class="alert_explanation">
+                    This indicator compares past 24-hour rainfall with
+                    the heavy-rainfall threshold for the selected region.
+                    Reaching the threshold does not necessarily mean
+                    flooding will occur.
+                </p>
+
+                <div class="threshold_details">
+                    <div>
+                        <span class="detail_label">HEAVY-RAINFALL THRESHOLD</span>
+
+                        <strong id="rainfall_threshold">Not available</strong>
+
+                        <p class="threshold_note">
+                            The 24-hour rainfall level used to identify heavy rainfall
+                            for the selected region.
+                        </p>
+                    </div>
+
+                    <div class="threshold_icon">
+                        <i class="bi bi-speedometer2"></i>
+                    </div>
+                </div>
+
+                <div class="meter_heading">
+                    <span>Rainfall compared with threshold</span>
+                    <span id="rainfall_meter_text">Not available</span>
+                </div>
+
+                <div id="rainfall_meter"
+                    class="rainfall_meter"
+                    role="progressbar"
+                    aria-label="Rainfall compared with the heavy-rainfall threshold"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0">
+
+                    <div id="rainfall_meter_fill" class="rainfall_meter_fill"></div>
+                </div>
+
+                <p class="meter_note">
+                    This meter shows rainfall as a percentage of the
+                    threshold, not the probability of flooding.
+                </p>
+            </div>
+        </div>
+
+        <div class="section_heading">
+            <div>
+                <p class="section_kicker">BE PREPARED</p>
+                <h2>What Can You Do?</h2>
+            </div>
+
+            <i class="bi bi-shield-fill-check preparedness_icon"></i>
+        </div>
+
+        <div class="row g-3 mb-5">
+            <div class="col-md-4">
+                <div class="action_card">
+                    <span class="action_number">01</span>
+                    <h3>Stay Informed</h3>
+                    <p>
+                        Follow official DMH weather updates and local
+                        flood warnings.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="action_card">
+                    <span class="action_number">02</span>
+                    <h3>Prepare Essentials</h3>
+                    <p>
+                        Keep drinking water, a torch, essential medicines,
+                        and important documents ready.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="action_card">
+                    <span class="action_number">03</span>
+                    <h3>Plan Ahead</h3>
+                    <p>
+                        Know safer routes and follow local evacuation
+                        instructions if issued.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="data_footer">
+            <div class="footer_icon">
+                <i class="bi bi-database-fill-check"></i>
+            </div>
+
+            <div>
+                <h3>About This Data</h3>
+                
+                <p>
+                    Source:
+                    <a href="https://open-meteo.com/">Open-Meteo</a>.
+                    Values are weather-model estimates, not guaranteed
+                    direct measurements from rain gauges.
+                </p>
+
+                <p>
+                    The page requests new data every 10 minutes.
+                    This does not mean the weather model itself updates
+                    every 10 minutes.
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/lastest_update.js"></script>
+
+    <!-- Bootstrap CDN js Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- Aos js link -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Initiate AOS -->
+    <script>AOS.init();</script>
+
+</body>
+
+</html>
