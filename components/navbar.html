@@ -1,169 +1,382 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WaveSafety</title>
+<head>
+    <!-- Page settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaveSafety Navbar</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    <!-- Navbar CSS -->
-    <link rel="stylesheet" href="/css/navbar.css" />
-  </head>
-  <body>
-    <!-- NAVBAR -->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+
+<body>
+
+    <!-- ==================== DESKTOP NAVBAR ==================== -->
     <nav class="navbar navbar-expand-xl flood-navbar">
-      <div class="container-fluid px-3 px-lg-4">
-        <a class="navbar-brand flood-brand" href="index.html">
-          <img src="/image/WaveSafety.png" alt="WaveSafety Logo" class="brand-logo" />
-          <span class="brand-name">WaveSafety</span>
-        </a>
+        <div class="container-fluid">
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+            <!-- Website logo -->
+            <a class="navbar-brand flood-brand" href="index.html">
+                <img src="/image/WaveSafety.png" alt="WaveSafety Logo" class="brand-logo">
+                <span class="brand-name">WaveSafety</span>
+            </a>
 
-        <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav mx-auto align-items-xl-center">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
+            <!-- Mobile toggler for tablet/desktop-width navigation -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarContent"
+                    aria-controls="navbarContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <li class="nav-item">
-              <a class="nav-link" href="flood-risk.html">Flood Risk</a>
-            </li>
+            <!-- Desktop navigation links and account buttons -->
+            <div class="collapse navbar-collapse" id="navbarContent">
 
-            <li class="nav-item">
-              <a class="nav-link" href="solutions.html">Solutions</a>
-            </li>
+                <ul class="navbar-nav mx-auto align-items-xl-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="flood-risk.html">Flood Risks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="solutions.html">Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="preparedness.html">Preparedness</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="updates.html">Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                </ul>
 
-            <li class="nav-item">
-              <a class="nav-link" href="preparedness.html">Preparedness Guide</a>
-            </li>
+                <!-- Desktop account buttons -->
+                <div class="auth-buttons d-flex flex-column flex-xl-row gap-2">
+                    <button class="btn btn-login"
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
+                        Log In
+                    </button>
 
-            <li class="nav-item">
-              <a class="nav-link" href="updates.html">Latest Updates</a>
-            </li>
+                    <button class="btn btn-signup"
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#signupModal">
+                        Sign Up
+                    </button>
+                </div>
 
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
-            </li>
-          </ul>
-
-          <div class="auth-buttons d-flex flex-column flex-xl-row gap-2">
-            <button class="btn btn-signup" type="button" data-bs-toggle="modal" data-bs-target="#signupModal">Sign up</button>
-
-            <button class="btn btn-login" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Log in</button>
-          </div>
+            </div>
         </div>
-      </div>
     </nav>
 
-    <!-- SIGN UP MODAL -->
-    <div class="modal fade auth-modal" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header auth-modal-header">
-            <div>
-              <span class="modal-icon">
-                <i class="bi bi-person-plus-fill"></i>
-              </span>
 
-              <h2 class="modal-title" id="signupModalLabel">Create an Account</h2>
+    <!-- ==================== MOBILE BOTTOM NAVBAR ==================== -->
+    <nav class="mobile-bottom-nav d-lg-none" aria-label="Mobile navigation">
 
-              <p>Join us in building safer communities.</p>
-            </div>
+        <!-- Flood risks shortcut -->
+        <a href="flood-risk.html" class="mobile-nav-item" aria-label="Flood Risks">
+            <i class="bi bi-exclamation-triangle"></i>
+        </a>
 
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
+        <!-- Solutions shortcut -->
+        <a href="solutions.html" class="mobile-nav-item" aria-label="Solutions">
+            <i class="bi bi-lightbulb"></i>
+        </a>
 
-          <div class="modal-body">
-            <form id="signupForm">
-              <div class="mb-3">
-                <label for="signupName" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="signupName" name="name" placeholder="Enter your full name" autocomplete="name" required />
-              </div>
+        <!-- Home shortcut -->
+        <a href="index.html" class="mobile-nav-item active" aria-label="Home">
+            <span class="active-label">Home</span>
+            <span class="mobile-icon-circle">
+                <i class="bi bi-house-door-fill"></i>
+            </span>
+        </a>
 
-              <div class="mb-3">
-                <label for="signupEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="signupEmail" name="email" placeholder="you@example.com" autocomplete="email" required />
-              </div>
+        <!-- Updates shortcut -->
+        <a href="updates.html" class="mobile-nav-item" aria-label="Updates">
+            <i class="bi bi-journal-text"></i>
+        </a>
 
-              <div class="mb-3">
-                <label for="signupPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="signupPassword" name="password" placeholder="Create a password" minlength="8" autocomplete="new-password" required />
-                <small class="form-text">Use at least 8 characters.</small>
-              </div>
+        <!-- Three dots open the sidebar -->
+        <button class="mobile-nav-item"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileSidebar"
+                aria-controls="mobileSidebar"
+                aria-label="Open menu">
+            <i class="bi bi-three-dots-vertical"></i>
+        </button>
 
-              <div class="mb-4">
-                <label for="confirmPassword" class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Enter your password again" minlength="8" autocomplete="new-password" required />
-                <div id="passwordMessage" class="form-feedback"></div>
-              </div>
+    </nav>
 
-              <button type="submit" class="btn auth-submit">
-                Create Account
-                <i class="bi bi-arrow-right ms-2"></i>
-              </button>
 
-              <p class="auth-switch">
-                Already have an account?
-                <button type="button" class="text-button" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">Log in</button>
-              </p>
-            </form>
-          </div>
+    <!-- ==================== MOBILE SIDEBAR ==================== -->
+    <div class="offcanvas offcanvas-end mobile-sidebar"
+         tabindex="-1"
+         id="mobileSidebar"
+         aria-labelledby="mobileSidebarTitle">
+
+        <!-- Sidebar header -->
+        <div class="offcanvas-header">
+            <a href="index.html" class="sidebar-brand">
+                <img src="/image/WaveSafety.png" alt="WaveSafety Logo">
+                <span id="mobileSidebarTitle">WaveSafety</span>
+            </a>
+
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
         </div>
-      </div>
-    </div>
 
-    <!-- LOG IN MODAL -->
-    <div class="modal fade auth-modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header auth-modal-header">
-            <div>
-              <span class="modal-icon">
-                <i class="bi bi-shield-lock-fill"></i>
-              </span>
+        <!-- Sidebar links and account options -->
+        <div class="offcanvas-body">
 
-              <h2 class="modal-title" id="loginModalLabel">Welcome Back</h2>
+            <p class="sidebar-label">NAVIGATION</p>
 
-              <p>Log in to continue to WaveSafety.</p>
-            </div>
+            <a href="index.html" class="sidebar-link">
+                <i class="bi bi-house-door"></i> Home
+            </a>
 
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
+            <a href="flood-risk.html" class="sidebar-link">
+                <i class="bi bi-exclamation-triangle"></i> Flood Risks
+            </a>
 
-          <div class="modal-body">
-            <form id="loginForm">
-              <div class="mb-3">
-                <label for="loginEmail" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="loginEmail" name="email" placeholder="you@example.com" autocomplete="email" required />
-              </div>
+            <a href="solutions.html" class="sidebar-link">
+                <i class="bi bi-lightbulb"></i> Solutions
+            </a>
 
-              <div class="mb-4">
-                <label for="loginPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Enter your password" autocomplete="current-password" required />
-              </div>
+            <a href="preparedness.html" class="sidebar-link">
+                <i class="bi bi-shield-check"></i> Preparedness
+            </a>
 
-              <button type="submit" class="btn auth-submit">
+            <a href="updates.html" class="sidebar-link">
+                <i class="bi bi-journal-text"></i> Latest Updates
+            </a>
+
+            <a href="about.html" class="sidebar-link">
+                <i class="bi bi-info-circle"></i> About Us
+            </a>
+
+            <hr class="sidebar-divider">
+
+            <p class="sidebar-label">YOUR ACCOUNT</p>
+
+            <button class="sidebar-signup"
+                    type="button"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signupModal">
+                <i class="bi bi-person-plus me-2"></i> Sign Up
+            </button>
+
+            <button class="sidebar-login"
+                    type="button"
+                    data-bs-dismiss="offcanvas"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginModal">
                 Log In
-                <i class="bi bi-arrow-right ms-2"></i>
-              </button>
+            </button>
 
-              <p class="auth-switch">
-                Don't have an account?
-                <button type="button" class="text-button" data-bs-toggle="modal" data-bs-target="#signupModal" data-bs-dismiss="modal">Sign up</button>
-              </p>
-            </form>
-          </div>
+            <!-- Preparedness information card -->
+            <div class="sidebar-tip">
+                <i class="bi bi-shield-check"></i>
+                <h5>Stay flood-ready</h5>
+                <p>Learn how to prepare before a flood happens.</p>
+                <a href="preparedness.html">View safety guide →</a>
+            </div>
+
         </div>
-      </div>
     </div>
+
+
+    <!-- ==================== SIGN-UP MODAL ==================== -->
+    <div class="modal fade auth-modal"
+         id="signupModal"
+         tabindex="-1"
+         aria-labelledby="signupTitle"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal header -->
+                <div class="modal-header auth-modal-header">
+                    <div>
+                        <div class="modal-icon">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+
+                        <h2 class="modal-title" id="signupTitle">Join WaveSafety</h2>
+                        <p>Create an account to stay informed and prepared.</p>
+                    </div>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <!-- Sign-up form -->
+                <div class="modal-body">
+                    <form action="#" method="post">
+
+                        <div class="mb-3">
+                            <label for="signupName" class="form-label">Full Name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="signupName"
+                                   name="name"
+                                   placeholder="Enter your full name"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email Address</label>
+                            <input type="email"
+                                   class="form-control"
+                                   id="signupEmail"
+                                   name="email"
+                                   placeholder="name@example.com"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password</label>
+                            <input type="password"
+                                   class="form-control"
+                                   id="signupPassword"
+                                   name="password"
+                                   placeholder="Create a password"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password"
+                                   class="form-control"
+                                   id="confirmPassword"
+                                   name="confirmPassword"
+                                   placeholder="Enter your password again"
+                                   required>
+                        </div>
+
+                        <button type="submit" class="auth-submit">
+                            Create Account <i class="bi bi-arrow-right"></i>
+                        </button>
+
+                        <!-- Switch to the login modal -->
+                        <p class="auth-switch">
+                            Already have an account?
+                            <button type="button"
+                                    class="text-button"
+                                    data-bs-target="#loginModal"
+                                    data-bs-toggle="modal"
+                                    data-bs-dismiss="modal">
+                                Log in
+                            </button>
+                        </p>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== LOG-IN MODAL ==================== -->
+    <div class="modal fade auth-modal"
+         id="loginModal"
+         tabindex="-1"
+         aria-labelledby="loginTitle"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal header -->
+                <div class="modal-header auth-modal-header">
+                    <div>
+                        <div class="modal-icon">
+                            <i class="bi bi-person-check"></i>
+                        </div>
+
+                        <h2 class="modal-title" id="loginTitle">Welcome Back</h2>
+                        <p>Log in to continue with WaveSafety.</p>
+                    </div>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <!-- Login form -->
+                <div class="modal-body">
+                    <form action="#" method="post">
+
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email Address</label>
+                            <input type="email"
+                                   class="form-control"
+                                   id="loginEmail"
+                                   name="email"
+                                   placeholder="name@example.com"
+                                   required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password"
+                                   class="form-control"
+                                   id="loginPassword"
+                                   name="password"
+                                   placeholder="Enter your password"
+                                   required>
+                        </div>
+
+                        <button type="submit" class="auth-submit">
+                            Log In <i class="bi bi-arrow-right"></i>
+                        </button>
+
+                        <!-- Switch to the sign-up modal -->
+                        <p class="auth-switch">
+                            Don't have an account?
+                            <button type="button"
+                                    class="text-button"
+                                    data-bs-target="#signupModal"
+                                    data-bs-toggle="modal"
+                                    data-bs-dismiss="modal">
+                                Sign up
+                            </button>
+                        </p>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JavaScript enables the collapse, sidebar, and modals -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+
+</body>
 </html>

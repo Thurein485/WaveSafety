@@ -1,10 +1,17 @@
+
+/* ==================== COLOUR VARIABLES ==================== */
+
 :root {
     --primary-green: #607840;
     --dark-green: #293a20;
     --cream: #f4edcf;
+    --soft-green: #eef3e8;
+    --text-dark: #263421;
 }
 
-/* Navbar */
+
+/* ==================== DESKTOP NAVBAR ==================== */
+
 .flood-navbar {
     background: var(--primary-green);
     margin: 6px 14px 0;
@@ -21,34 +28,28 @@
     margin-right: 20px;
 }
 
+/* Website logo */
 .brand-logo {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     width: 76px;
     height: 76px;
     min-width: 76px;
-    border-radius: 50%;
-    background: var(--cream);
-    color: #655a2b;
-    font-size: 36px;
+    object-fit: contain;
+    transition: transform 0.35s ease;
 }
 
-.logo-water {
-    position: absolute;
-    right: 10px;
-    bottom: 9px;
-    font-size: 25px;
+.flood-brand:hover .brand-logo {
+    transform: scale(1.06);
 }
 
+/* Website name, shown when the navbar collapses */
 .brand-name {
     display: none;
     color: #fff;
     font: bold 27px Georgia, "Times New Roman", serif;
 }
 
-/* Navigation links */
+/* Desktop navigation links */
 .flood-navbar .navbar-nav {
     gap: 12px;
 }
@@ -58,7 +59,7 @@
     padding: 12px 9px !important;
     font: clamp(16px, 1.55vw, 27px) Georgia, "Times New Roman", serif;
     white-space: nowrap;
-    transition: color 0.2s;
+    transition: color 0.25s ease, background 0.25s ease;
 }
 
 .flood-navbar .nav-link:hover,
@@ -66,7 +67,7 @@
     color: var(--cream);
 }
 
-/* Sign up and log in buttons */
+/* Log-in and sign-up buttons */
 .auth-buttons {
     margin-left: 12px;
 }
@@ -77,7 +78,8 @@
     border-radius: 12px;
     padding: 10px 24px;
     font: 25px Georgia, "Times New Roman", serif;
-    transition: 0.2s;
+    transition: transform 0.25s ease, background 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .btn-signup {
@@ -90,6 +92,8 @@
     color: var(--cream);
     background: #1d2b17;
     border-color: #1d2b17;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.18);
 }
 
 .btn-login {
@@ -101,10 +105,11 @@
 .btn-login:hover {
     color: #111;
     background: #fff;
-    border-color: #111;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Mobile navigation toggle */
+/* Bootstrap navbar toggler */
 .flood-navbar .navbar-toggler {
     border: 2px solid rgba(255, 255, 255, 0.65);
     border-radius: 10px;
@@ -119,102 +124,196 @@
     filter: brightness(0) invert(1);
 }
 
-/* Authentication modals */
+
+/* ==================== MODAL BACKDROP AND TRANSITION ==================== */
+
+/* Darken and blur the background behind a modal */
+.modal-backdrop.show {
+    opacity: 0.7;
+    backdrop-filter: blur(5px);
+}
+
+/* Modal entrance animation */
+.auth-modal.fade .modal-dialog {
+    transform: translateY(24px) scale(0.97);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.auth-modal.show .modal-dialog {
+    transform: translateY(0) scale(1);
+}
+
+/* Modal size and shape */
 .auth-modal .modal-dialog {
-    max-width: 480px;
+    max-width: 460px;
     margin: 1.5rem auto;
     padding: 0 12px;
 }
 
 .auth-modal .modal-content {
     overflow: hidden;
-    border: none;
-    border-radius: 24px;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(96, 120, 64, 0.15);
+    border-radius: 26px;
+    background: #fff;
+    box-shadow: 0 28px 80px rgba(15, 30, 10, 0.25);
 }
+
+
+/* ==================== MODAL HEADER ==================== */
 
 .auth-modal-header {
+    position: relative;
     display: flex;
     align-items: flex-start;
+    overflow: hidden;
+    padding: 32px 30px 28px;
+    border: none;
+    color: #fff;
     background: linear-gradient(
         135deg,
-        var(--primary-green),
-        var(--dark-green)
+        #718c4b 0%,
+        #405b30 55%,
+        #293a20 100%
     );
-    color: #fff;
-    padding: 30px 30px 26px;
-    border: none;
 }
 
+/* Decorative circles in the modal header */
+.auth-modal-header::before,
+.auth-modal-header::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.auth-modal-header::before {
+    width: 190px;
+    height: 190px;
+    top: -105px;
+    right: -40px;
+}
+
+.auth-modal-header::after {
+    width: 130px;
+    height: 130px;
+    top: -65px;
+    right: -10px;
+}
+
+.auth-modal-header > div {
+    position: relative;
+    z-index: 1;
+}
+
+/* Modal close button */
 .auth-modal-header .btn-close {
+    position: relative;
+    z-index: 2;
     filter: brightness(0) invert(1);
-    opacity: 0.85;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .auth-modal-header .btn-close:hover {
     opacity: 1;
+    transform: rotate(90deg);
 }
 
+/* Icon above the modal title */
 .modal-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
-    margin-bottom: 18px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.17);
-    font-size: 25px;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--cream);
+    font-size: 27px;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
+.auth-modal .modal-content:hover .modal-icon {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Modal title and description */
 .auth-modal-header .modal-title {
-    margin-bottom: 8px;
-    font-size: 27px;
+    margin-bottom: 9px;
+    color: #fff;
+    font-size: 28px;
     font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
 .auth-modal-header p {
     margin: 0;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.82);
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
+
+
+/* ==================== MODAL FORM ==================== */
 
 .auth-modal .modal-body {
-    padding: 28px 30px 25px;
-    background: #fff;
+    padding: 30px;
+    background: linear-gradient(180deg, #fff 0%, #fcfdf9 100%);
 }
 
+/* Form labels */
 .auth-modal .form-label {
-    margin-bottom: 8px;
+    margin-bottom: 9px;
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+/* Form input fields */
+.auth-modal .form-control {
+    min-height: 51px;
+    padding: 13px 15px;
+    border: 1px solid #dfe5d8;
+    border-radius: 12px;
+    background: #f8faf5;
     color: #263421;
     font-size: 14px;
-    font-weight: 700;
+    transition: border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
 }
 
-.auth-modal .form-control {
-    min-height: 49px;
-    padding: 12px 14px;
-    border: 1px solid #dce2d7;
-    border-radius: 11px;
-    background: #fafbf8;
-    font-size: 14px;
+.auth-modal .form-control:hover {
+    border-color: #a9b99a;
 }
 
 .auth-modal .form-control:focus {
     border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(96, 120, 64, 0.15);
+    outline: none;
     background: #fff;
+    box-shadow: 0 0 0 4px rgba(96, 120, 64, 0.13);
+    transform: translateY(-1px);
 }
 
 .auth-modal .form-control::placeholder {
     color: #9ba297;
 }
 
-.form-text {
+.auth-modal .form-control:focus::placeholder {
+    color: #c0c8b9;
+}
+
+/* Optional form helper text */
+.auth-modal .form-text {
     display: block;
-    margin-top: 7px;
-    color: #6c7568;
+    margin-top: 8px;
+    color: #78816f;
     font-size: 12px;
 }
 
@@ -223,39 +322,58 @@
     font-size: 13px;
 }
 
-/* Modal submit button */
+/* Form submission button */
 .auth-submit {
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    min-height: 51px;
-    border: none;
-    border-radius: 11px;
+    min-height: 52px;
+    border: 1px solid var(--primary-green);
+    border-radius: 12px;
     background: var(--primary-green);
     color: #fff;
     font-size: 15px;
     font-weight: 700;
-    transition: 0.2s;
+    transition: transform 0.25s ease, background 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .auth-submit:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     background: var(--dark-green);
+    border-color: var(--dark-green);
     color: #fff;
+    box-shadow: 0 8px 18px rgba(41, 58, 32, 0.2);
 }
 
-/* Switch between login and signup */
+.auth-submit:active {
+    transform: scale(0.98);
+}
+
+.auth-submit i {
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.auth-submit:hover i {
+    transform: translateX(4px);
+}
+
+/* Link to switch between sign-up and log-in */
 .auth-switch {
-    margin: 22px 0 0;
-    color: #6c7568;
+    margin: 23px 0 0;
+    color: #78816f;
     text-align: center;
     font-size: 13px;
 }
 
 .text-button {
-    padding: 0;
+    padding: 0 2px;
     border: none;
     background: transparent;
     color: var(--primary-green);
     font-weight: 700;
+    transition: color 0.2s ease;
 }
 
 .text-button:hover {
@@ -263,7 +381,10 @@
     text-decoration: underline;
 }
 
-/* Medium desktop screens */
+
+/* ==================== DESKTOP AND TABLET SIZING ==================== */
+
+/* Keep the original compact desktop layout for medium-width laptops */
 @media (min-width: 1200px) and (max-width: 1550px) {
     .flood-navbar {
         padding: 9px 14px;
@@ -282,13 +403,6 @@
         width: 62px;
         height: 62px;
         min-width: 62px;
-        font-size: 30px;
-    }
-
-    .brand-logo .logo-water {
-        right: 7px;
-        bottom: 7px;
-        font-size: 20px;
     }
 
     .flood-brand,
@@ -305,7 +419,7 @@
     }
 }
 
-/* Tablets and smaller screens */
+/* Collapse the desktop links on smaller screens */
 @media (max-width: 1199.98px) {
     .flood-navbar {
         padding: 10px 16px;
@@ -346,36 +460,245 @@
     }
 }
 
-/* Mobile phones */
-@media (max-width: 575.98px) {
+
+/* ==================== MOBILE BOTTOM NAVBAR ==================== */
+
+/* Floating mobile navigation bar */
+.mobile-bottom-nav {
+    position: fixed;
+    z-index: 1030;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 36px);
+    max-width: 480px;
+    min-height: 76px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    background: var(--primary-green);
+    border: 1px solid rgba(244, 237, 207, 0.15);
+    border-radius: 28px;
+    box-shadow: 0 12px 35px rgba(25, 42, 20, 0.22);
+}
+
+.mobile-nav-item {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cream);
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    font-size: 27px;
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-nav-item:hover {
+    color: #ffffff;
+}
+
+.mobile-nav-item:active {
+    transform: scale(0.92);
+}
+
+/* Highlighted home icon */
+.mobile-icon-circle {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f2d94e;
+    color: var(--dark-green);
+    font-size: 30px;
+}
+
+/* Label above the selected page */
+.active-label {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 7px 23px;
+    border-radius: 20px;
+    background: #a3b18a;
+    color: var(--dark-green);
+    font-size: 19px;
+    white-space: nowrap;
+}
+
+
+/* ==================== MOBILE SIDEBAR ==================== */
+
+/* Sidebar that slides in from the right */
+.mobile-sidebar {
+    width: min(85%, 360px) !important;
+    background: #f8f6ec;
+    color: var(--text-dark);
+    border-radius: 24px 0 0 24px;
+}
+
+.mobile-sidebar .offcanvas-header {
+    padding: 24px 22px;
+    border-bottom: 1px solid #e4e5d7;
+}
+
+/* Sidebar logo and name */
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark-green);
+    font-size: 21px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.sidebar-brand img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.mobile-sidebar .offcanvas-body {
+    padding: 24px 20px;
+}
+
+/* Sidebar section headings */
+.sidebar-label {
+    margin-bottom: 12px;
+    color: #78866a;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* Sidebar navigation links */
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 14px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    color: var(--text-dark);
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.25s ease;
+}
+
+.sidebar-link i {
+    width: 22px;
+    color: var(--primary-green);
+    font-size: 19px;
+}
+
+.sidebar-link:hover {
+    background: var(--soft-green);
+}
+
+/* Divider before account buttons */
+.sidebar-divider {
+    border-color: #dfe4d6;
+    margin: 22px 0;
+}
+
+/* Sidebar sign-up and log-in buttons */
+.sidebar-signup,
+.sidebar-login {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid var(--primary-green);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebar-signup {
+    background: var(--dark-green);
+    color: #ffffff;
+}
+
+.sidebar-signup:hover {
+    background: var(--primary-green);
+}
+
+.sidebar-login {
+    background: var(--cream);
+    color: var(--text-dark);
+}
+
+.sidebar-login:hover {
+    background: #ffffff;
+}
+
+/* Flood preparedness card in the sidebar */
+.sidebar-tip {
+    padding: 18px;
+    margin-top: 24px;
+    border: 1px solid #dfe5d4;
+    border-radius: 16px;
+    background: var(--soft-green);
+}
+
+.sidebar-tip > i {
+    color: var(--primary-green);
+    font-size: 25px;
+}
+
+.sidebar-tip h5 {
+    margin-top: 12px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.sidebar-tip p {
+    color: #66715c;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.sidebar-tip a {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--dark-green);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+/* ==================== MOBILE RESPONSIVE SETTINGS ==================== */
+
+/* Hide desktop navbar on phones and tablets; show mobile navigation */
+@media (max-width: 991.98px) {
     .flood-navbar {
-        margin: 6px 8px 0;
-        padding: 8px 12px;
+        display: none;
     }
 
-    .brand-logo {
-        width: 50px;
-        height: 50px;
-        min-width: 50px;
-        font-size: 25px;
+    body {
+        padding-bottom: 110px;
     }
+}
 
-    .brand-logo .logo-water {
-        right: 5px;
-        bottom: 5px;
-        font-size: 17px;
-    }
-
-    .flood-brand {
-        gap: 10px;
-    }
-
-    .brand-name {
-        font-size: 22px;
+/* Smaller modal spacing on phones */
+@media (max-width: 575.98px) {
+    .auth-modal .modal-dialog {
+        margin: 1rem auto;
     }
 
     .auth-modal-header {
-        padding: 25px 22px 22px;
+        padding: 25px 22px 23px;
     }
 
     .auth-modal .modal-body {
@@ -383,6 +706,12 @@
     }
 
     .auth-modal-header .modal-title {
+        font-size: 24px;
+    }
+
+    .modal-icon {
+        width: 49px;
+        height: 49px;
         font-size: 23px;
     }
 }
