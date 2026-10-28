@@ -1,89 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WaveSafety | Home</title>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
- 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <!-- Font Awesome Icons -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
-    <!-- CSS -->
-    <link rel="stylesheet" href="index.css" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="image/favicon.png" >
+
+    <!-- Bootstrap CDN CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS CSS Link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS file -->
+    <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
-    <header>
-        <div class="hero_section d-flex flex-column justify-content-between text-white">
-            <div class="container my-auto py-5">
-                <div class="row">
-                    <p class="text-uppercase tracking_wide fw-semibold small mb-5">— A SAFER TOMORROW STARTS WITH PREPARATION</p>
-                    <h1 class="display-4 fw-bold mb-3">
-                        Flood Preparations in <span class="highlight_text">Myanmar</span>
+
+    <!-- Hero Section -->
+    <header class="hero_section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-7">
+                    <div class="hero-pill-badge mb-4">
+                        <span class="hero-live-dot"></span>
+                        DISASTER RISK REDUCTION • MYANMAR
+                    </div>
+
+                    <p class="hero-eyebrow">KNOW THE RISK. MAKE A PLAN.</p>
+
+                    <h1 class="hero-title mb-4">
+                        Be ready before<br>
+                        the <span class="highlight-gold">waters rise.</span>
                     </h1>
-                    <p class="lead mb-4 description-text mb-5">
-                        Rising waters can affect homes, livelihoods, and communities. Stay informed, be prepared, and learn how to reduce the risks.
+
+                    <p class="hero-description mb-4">
+                        Flooding can happen quickly during Myanmar’s monsoon season.
+                        Learn what to prepare, how to protect your home, and where
+                        to find trusted updates for your family and community.
                     </p>
 
-                    <div>
-                        <a href="#" class="btn btn-outline-warning rounded-pill px-4 py-2 custom-btn">
-                            Explore More
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#preparedness" class="hero-btn-primary">
+                            Explore Safety Guide
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+
+                        <a href="#reports" class="hero-btn-outline">
+                            <i class="fa-solid fa-circle-info"></i>
+                            View Reports
                         </a>
                     </div>
                 </div>
+
+                <div class="col-lg-5">
+                    <div class="hero-dashboard-card">
+
+                        <div class="hero-card-topline">
+                            <span><i class="fa-solid fa-wave-square"></i> RIVER WATCH</span>
+                            <span class="hero-card-date">Preparedness overview</span>
+                        </div>
+
+                        <div class="hero-card-header">
+                            <div>
+                                <h3>River Monitor</h3>
+                                <p><i class="fa-solid fa-location-dot"></i> Myanmar</p>
+                            </div>
+
+                            <span class="hero-status">
+                                <span class="status-dot"></span>
+                                MONITOR
+                            </span>
+                        </div>
+
+                        <div class="hero-telemetry-grid">
+                            <div class="hero-telemetry-item">
+                                <div class="hero-telemetry-value">24 / 7</div>
+                                <div class="hero-telemetry-label">Stay informed</div>
+                            </div>
+
+                            <div class="hero-telemetry-item">
+                                <div class="hero-telemetry-value">Be Ready</div>
+                                <div class="hero-telemetry-label">Prepare early</div>
+                            </div>
+                        </div>
+
+                        <div class="hero-water-visual">
+                            <div class="water-grid"></div>
+
+                            <svg viewBox="0 0 520 130" preserveAspectRatio="none">
+                                <path class="wave wave-back"
+                                    d="M0 50 C55 15 95 85 150 50 S245 15 300 50 S395 85 450 50 S500 30 520 42 L520 130 L0 130 Z">
+                                </path>
+
+                                <path class="wave wave-front"
+                                    d="M0 73 C55 38 95 108 150 73 S245 38 300 73 S395 108 450 73 S500 53 520 65 L520 130 L0 130 Z">
+                                </path>
+                            </svg>
+
+                            <span class="water-label">
+                                River levels can change quickly
+                            </span>
+                        </div>
+
+                        <div class="hero-alert-banner">
+                            <i class="fa-solid fa-shield-heart"></i>
+                            <span>
+                                Keep essential supplies ready and follow official
+                                local emergency alerts.
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
 
-    <section class="mt-5">
-        <div class="container text-center">
-            <div class="row mb-2">
-                <div class="orange-waves mb-2">
-                    <svg width="40" height="20" viewBox="0 0 40 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto d-block">
-                        <path d="M2 5 Q10 1 18 5 T34 5" stroke="#e67e22" stroke-width="2" fill="none"/>
-                        <path d="M2 10 Q10 6 18 10 T34 10" stroke="#e67e22" stroke-width="2" fill="none"/>
-                        <path d="M2 15 Q10 11 18 15 T34 15" stroke="#e67e22" stroke-width="2" fill="none"/>
-                    </svg>
-                </div>
-                <p class="section-subtitle">-- DISASTER RISK REDUCTION --</p>
-            </div>
-            <h2 class="main-heading mb-4 text-center">Are you ready before the waters rise?</h2>
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-10">
-                    <p class="lead-text ">
-                        Floods can threaten <strong>our homes, livelihoods, and communities</strong>, sometimes with little warning. 
-                        Knowing the risks and <strong>preparing in advance</strong> can help <strong>protect lives and reduce damage</strong>. 
-                        Discover how floods affect us, learn essential safety measures, and find out how you can take action before disaster strikes.
-                    </p>
-                </div>
+
+    <!-- DRR Section -->
+    <section class="drr-section">
+        <div class="container ">
+
+            <div class="text-center mb-5">
+                <div class="orange-waves">~~~~</div>
+                <p class="section-subtitle">DISASTER RISK REDUCTION</p>
+
+                <h2 class="main-heading">
+                    Are you ready before the waters rise?
+                </h2>
+
+                <p class="lead-text">
+                    Floods can affect homes, farmlands, and communities with little
+                    notice. Understanding flood risks and taking action early helps
+                    protect lives and reduce damage.
+                </p>
             </div>
 
-            <div class="callout-banner p-4 p-md-5 mb-5 rounded-4 position-relative overflow-hidden text-white">
-                <div class="row align-items-center position-relative z-1">
-                    
-                    <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
-                        <div class="icon-circle mx-auto mx-md-0 d-flex align-items-center justify-content-center">
-                            <i class="fa-solid fa-house-flood-water text-white fs-1"></i>
-                        </div>
+            <div class="drr-highlight-box mb-5">
+                <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+                    <div class="drr-icon">
+                        <i class="fa-solid fa-house-flood-water"></i>
                     </div>
 
-                    <div class="col-md-9 text-center text-md-start">
-                        <h3 class="banner-title italic-quote mb-3">
-                            A flood doesn't wait. Neither should your preparation.
-                        </h3>
-                        <p class="banner-desc mb-0 ms-0">
-                            Floods can threaten lives, homes, and livelihoods with little warning. Stay informed, prepare ahead, and learn how to protect yourself and your community before disaster strikes.
+                    <div>
+                        <h3>“A flood doesn't wait. Neither should your preparation.”</h3>
+                        <p>
+                            Prepare an emergency bag, check official weather updates,
+                            and identify safe places in your community before flooding begins.
                         </p>
                     </div>
-
                 </div>
-                <div class="banner-wave-bg"></div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card-modern">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h4>Recognize</h4>
+                        <p>
+                            Learn about local flood risks, heavy rainfall, and river
+                            warnings before the rainy season.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="feature-card-modern">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-solid fa-kit-medical"></i>
+                        </div>
+                        <h4>Prepare</h4>
+                        <p>
+                            Pack clean water, food, medicine, flashlights, and
+                            important documents in an emergency bag.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="feature-card-modern">
+                        <div class="feature-icon-wrapper">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h4>Protect</h4>
+                        <p>
+                            Move valuables to higher places and follow official
+                            evacuation instructions when necessary.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Flood Preparedness Section -->
+    <section class="preparedness-section" id="preparedness">
+        <div class="container">
+
+            <div class="section-top mb-5">
+                <div class="badge-pill-custom">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    QUICK SAFETY TIPS
+                </div>
+
+                <h2 class="heading-serif mt-3">
+                    Small Actions.<br>
+                    <span class="text-orange-accent">Big Difference.</span>
+                </h2>
+
+                <p class="lead-text">
+                    Stay alert, stay prepared, and stay safe. Here are some simple
+                    ways to prepare for a flood.
+                </p>
+            </div>
+
+            <div class="safety-grid">
+
+                <div class="safety-card">
+                    <div class="card-img-container">
+                        <span class="card-number-tag">TIP 01</span>
+                        <img src="image/stay_safe.png" alt="People communicating and staying informed">
+                    </div>
+                    <div class="card-content">
+                        <h3>Stay Informed</h3>
+                        <p>Follow official weather forecasts and flood warnings.</p>
+                    </div>
+                </div>
+
+                <div class="safety-card">
+                    <div class="card-img-container">
+                        <span class="card-number-tag">TIP 02</span>
+                        <img src="image/emergency-kit.png" alt="Emergency supplies">
+                    </div>
+                    <div class="card-content">
+                        <h3>Pack Supplies</h3>
+                        <p>Prepare drinking water, food, medicine, and flashlights.</p>
+                    </div>
+                </div>
+
+                <div class="safety-card">
+                    <div class="card-img-container">
+                        <span class="card-number-tag">TIP 03</span>
+                        <img src="image/protect_home.png" alt="House and home safety">
+                    </div>
+                    <div class="card-content">
+                        <h3>Protect Your Home</h3>
+                        <p>Move important documents and valuables to higher places.</p>
+                    </div>
+                </div>
+
+                <div class="safety-card">
+                    <div class="card-img-container">
+                        <span class="card-number-tag">TIP 04</span>
+                        <img src="image/help_others.png" alt="People working together">
+                    </div>
+                    <div class="card-content">
+                        <h3>Help Each Other</h3>
+                        <p>Check on children, older people, and neighbors who may need help.</p>
+                    </div>
+                </div>
+
+                <div class="safety-card">
+                    <div class="card-img-container">
+                        <span class="card-number-tag">TIP 05</span>
+                        <img src="image/plan.png" alt="Planning and preparing">
+                    </div>
+                    <div class="card-content">
+                        <h3>Make a Plan</h3>
+                        <p>Choose a safe meeting place and plan evacuation routes.</p>
+                    </div>
+                </div>
+
+                <div class="safety-card">
+                    <div class="card-img-container">
+                        <span class="card-number-tag">TIP 06</span>
+                        <img src="image/charge_devices.png" alt="People working together">
+                    </div>
+                    <div class="card-content">
+                        <h3>Charge Devices</h3>
+                        <p>Keep phones and power banks charged for emergency updates.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
 
+    <!-- Recent Report Section -->
+    <section class="reports-section" id="reports">
+        <div class="container">
+
+            <div class="header-card-container">
+                <div class="row align-items-center g-4">
+
+                    <div class="col-lg-7">
+                        <div class="alert-pill mb-4">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            FLOOD REPORTS
+                        </div>
+
+                        <h2 class="section-heading">
+                            Recent Flooding <span class="highlight-orange">in</span>
+                            Myanmar
+                        </h2>
+
+                        <p class="lead-text">
+                            Stay informed about flooding and other hazards.
+                            Always confirm reports with official sources.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-5 text-center">
+                        <div class="oval-img-wrapper">
+                            <img src="image/flood-updates.png" alt="Flooded area" class="oval-img-frame">
+                            <div class="floating-stat-badge">
+                                <i class="fa-solid fa-location-dot"></i>
+                                Flood situation updates
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="reports-grid">
+
+                <article class="report-card">
+                    <div class="card-img-wrapper">
+                        <img src="image/tanintharyi_flood.png" alt="Flood emergency response">
+                        <span class="status-badge">Flood Risk</span>
+                    </div>
+                    <div class="report-body">
+                        <h3 class="report-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Tanintharyi Region
+                        </h3>
+                        <p class="report-desc">
+                            Check official updates for information about heavy rain,
+                            flooding, and possible landslides in the region.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="report-card">
+                    <div class="card-img-wrapper">
+                        <img src="image/mandalay_flood.png" alt="Flood water near buildings">
+                        <span class="status-badge">River Levels</span>
+                    </div>
+                    <div class="report-body">
+                        <h3 class="report-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Mandalay Region
+                        </h3>
+                        <p class="report-desc">
+                            Monitor local rainfall and river conditions, especially
+                            in low-lying areas near waterways.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="report-card">
+                    <div class="card-img-wrapper">
+                        <img src="image/ayeyarwady_flood.png" alt="Community members working together">
+                        <span class="status-badge">Preparedness</span>
+                    </div>
+                    <div class="report-body">
+                        <h3 class="report-location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Ayeyarwady Region
+                        </h3>
+                        <p class="report-desc">
+                            Communities in flood-prone areas should prepare
+                            emergency supplies and know nearby safe locations.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="reference-box">
+                <h3>
+                    <i class="fa-solid fa-circle-info"></i>
+                    Official Myanmar Flood Reports & Source Links
+                </h3>
+
+                <p>
+                    Check these organizations for disaster information and updates.
+                    Verify the latest situation before sharing a report.
+                </p>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <a href="https://ahacentre.org/flash-updates/" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-link"></i>
+                            AHA Centre — Disaster Updates
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="https://themimu.info/" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-link"></i>
+                            MIMU — Myanmar Information
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap CDN js Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- Aos js link -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Initiate AOS -->
+    <script>AOS.init();</script>
+
+    <script src="script.js"></script>
+
+
 </body>
+
 </html>
