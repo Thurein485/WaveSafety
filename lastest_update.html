@@ -1,23 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- Bootstrap CDN CSS Link -->
+    <title>Myanmar Rainfall Watch</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- Bootstrap CDN Icon Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <!-- AOS CSS Link -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Css -->
     <link rel="stylesheet" href="css/lastest_update.css">
 </head>
-<body>
 
+<body>
 
     <div class="dashboard_header">
         <div class="container px-4 py-5">
@@ -61,7 +57,7 @@
         </div>
 
         <div class="row g-4 mb-5">
-            
+
             <div class="col-md-6">
                 <div class="metric_card current_card">
                     <div class="metric_top">
@@ -84,7 +80,6 @@
                     </p>
                 </div>
             </div>
-
 
             <div class="col-md-6">
                 <div class="metric_card total_card">
@@ -168,50 +163,69 @@
                     This meter shows rainfall as a percentage of the
                     threshold, not the probability of flooding.
                 </p>
+
+                <div class="rainfall_guide">
+                    <div class="guide_heading">
+                        <div>
+                            <p class="section_kicker">UNDERSTAND THE LEVELS</p>
+                            <h3>Rainfall Intensity Guide</h3>
+                        </div>
+                        <i class="bi bi-cloud-lightning-rain"></i>
+                    </div>
+
+                    <div class="intensity_levels">
+                        <div class="intensity_item">
+                            <span class="intensity_dot low"></span>
+                            <div>
+                                <strong>Low</strong>
+                                <p>Continue monitoring the weather.</p>
+                            </div>
+                        </div>
+
+                        <div class="intensity_item">
+                            <span class="intensity_dot moderate"></span>
+                            <div>
+                                <strong>Moderate</strong>
+                                <p>Check local forecasts and prepare essentials.</p>
+                            </div>
+                        </div>
+
+                        <div class="intensity_item">
+                            <span class="intensity_dot high"></span>
+                            <div>
+                                <strong>High</strong>
+                                <p>Follow official warnings and avoid flood-prone areas.</p>
+                            </div>
+                        </div>
+
+                        <div class="intensity_item">
+                            <span class="intensity_dot severe"></span>
+                            <div>
+                                <strong>Very high</strong>
+                                <p>Follow emergency instructions from local authorities.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="guide_note">
+                        These are general guidance categories, not official rainfall thresholds.
+                        Actual risk depends on local conditions and official warnings.
+                    </p>
+                </div>
             </div>
         </div>
 
-        <div class="section_heading">
+        <div class="safety_banner">
+            <div class="safety_banner_icon">
+                <i class="bi bi-shield-exclamation"></i>
+            </div>
             <div>
-                <p class="section_kicker">BE PREPARED</p>
-                <h2>What Can You Do?</h2>
-            </div>
-
-            <i class="bi bi-shield-fill-check preparedness_icon"></i>
-        </div>
-
-        <div class="row g-3 mb-5">
-            <div class="col-md-4">
-                <div class="action_card">
-                    <span class="action_number">01</span>
-                    <h3>Stay Informed</h3>
-                    <p>
-                        Follow official DMH weather updates and local
-                        flood warnings.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="action_card">
-                    <span class="action_number">02</span>
-                    <h3>Prepare Essentials</h3>
-                    <p>
-                        Keep drinking water, a torch, essential medicines,
-                        and important documents ready.
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="action_card">
-                    <span class="action_number">03</span>
-                    <h3>Plan Ahead</h3>
-                    <p>
-                        Know safer routes and follow local evacuation
-                        instructions if issued.
-                    </p>
-                </div>
+                <p class="safety_banner_label">REMEMBER</p>
+                <h3>Rainfall data is only one part of flood safety.</h3>
+                <p>
+                    Stay alert to local conditions and follow official emergency
+                    instructions, even when the rainfall indicator is low.
+                </p>
             </div>
         </div>
 
@@ -222,10 +236,10 @@
 
             <div>
                 <h3>About This Data</h3>
-                
+
                 <p>
                     Source:
-                    <a href="https://open-meteo.com/">Open-Meteo</a>.
+                    <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>.
                     Values are weather-model estimates, not guaranteed
                     direct measurements from rain gauges.
                 </p>
@@ -235,24 +249,21 @@
                     This does not mean the weather model itself updates
                     every 10 minutes.
                 </p>
-
             </div>
         </div>
 
     </div>
 
-    <!-- JavaScript -->
     <script src="js/lastest_update.js"></script>
 
-    <!-- Bootstrap CDN js Link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
 
-    <!-- Aos js link -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Initiate AOS -->
-    <script>AOS.init();</script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 
