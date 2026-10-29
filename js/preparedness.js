@@ -184,9 +184,7 @@ function updateProgress() {
     });
 
     const total = checkboxes.length;
-    const percentage = total > 0
-        ? Math.round((completed / total) * 100)
-        : 0;
+    const percentage = total > 0 ? Math.round((completed / total) * 100) : 0;
 
     const points = completed * 10;
     const degrees = percentage * 3.6;
@@ -204,9 +202,7 @@ function updateProgress() {
     }
 
     if (progressRing) {
-        progressRing.style.background =
-            "conic-gradient(#2a4700 " + degrees +
-            "deg, #e7ecdf " + degrees + "deg)";
+        progressRing.style.background = "conic-gradient(#2a4700 " + degrees + "deg, #e7ecdf " + degrees + "deg)";
     }
 
     /* Progress message */
@@ -214,17 +210,13 @@ function updateProgress() {
         if (total === 0) {
             progressMessage.textContent = "No checklist tasks found.";
         } else if (percentage === 100) {
-            progressMessage.textContent =
-                "Great job! You have completed every task.";
+            progressMessage.textContent = "Great job! You have completed every task.";
         } else if (percentage >= 60) {
-            progressMessage.textContent =
-                "Good progress! Keep going and finish your plan.";
+            progressMessage.textContent = "Good progress! Keep going and finish your plan.";
         } else if (percentage > 0) {
-            progressMessage.textContent =
-                "Nice start! Complete more tasks to prepare.";
+            progressMessage.textContent = "Nice start! Complete more tasks to prepare.";
         } else {
-            progressMessage.textContent =
-                "Start checking off your tasks to get ready.";
+            progressMessage.textContent = "Start checking off your tasks to get ready.";
         }
     }
 
@@ -248,21 +240,13 @@ function updateProgress() {
     const rewardTitle = document.getElementById("reward-title");
     const rewardDescription = document.getElementById("reward-description");
 
-    if (
-        rewardCard &&
-        rewardIcon &&
-        rewardLabel &&
-        rewardTitle &&
-        rewardDescription &&
-        pointsNext
-    ) {
+    if (rewardCard && rewardIcon && rewardLabel && rewardTitle && rewardDescription && pointsNext) {
         if (points >= 80) {
             rewardCard.classList.add("earned");
             rewardIcon.innerHTML = '<i class="fa-solid fa-trophy"></i>';
             rewardLabel.textContent = "REWARD UNLOCKED!";
             rewardTitle.textContent = "Flood Ready Champion!";
-            rewardDescription.textContent =
-                "Amazing! You completed every task and earned all 80 points.";
+            rewardDescription.textContent = "Amazing! You completed every task and earned all 80 points.";
             pointsNext.textContent = "You reached the maximum score!";
 
         } else if (points >= 40) {
@@ -270,30 +254,24 @@ function updateProgress() {
             rewardIcon.innerHTML = '<i class="fa-solid fa-medal"></i>';
             rewardLabel.textContent = "SAFETY LEARNER";
             rewardTitle.textContent = "You're doing great!";
-            rewardDescription.textContent =
-                "Keep going to unlock your Flood Ready Champion reward.";
-            pointsNext.textContent =
-                (80 - points) + " more points to unlock your champion reward.";
+            rewardDescription.textContent = "Keep going to unlock your Flood Ready Champion reward.";
+            pointsNext.textContent = (80 - points) + " more points to unlock your champion reward.";
 
         } else if (points >= 10) {
             rewardCard.classList.remove("earned");
             rewardIcon.innerHTML = '<i class="fa-solid fa-star"></i>';
             rewardLabel.textContent = "FIRST STEP UNLOCKED";
             rewardTitle.textContent = "Nice start!";
-            rewardDescription.textContent =
-                "You've started preparing. Complete more tasks to earn points.";
-            pointsNext.textContent =
-                (80 - points) + " more points to unlock your champion reward.";
+            rewardDescription.textContent = "You've started preparing. Complete more tasks to earn points.";
+            pointsNext.textContent = (80 - points) + " more points to unlock your champion reward.";
 
         } else {
             rewardCard.classList.remove("earned");
             rewardIcon.innerHTML = '<i class="fa-solid fa-lock"></i>';
             rewardLabel.textContent = "REWARD LOCKED";
             rewardTitle.textContent = "Your reward is waiting!";
-            rewardDescription.textContent =
-                "Complete tasks to collect points and unlock your reward.";
-            pointsNext.textContent =
-                "Earn 10 points for every completed task.";
+            rewardDescription.textContent = "Complete tasks to collect points and unlock your reward.";
+            pointsNext.textContent = "Earn 10 points for every completed task.";
         }
     }
 }
