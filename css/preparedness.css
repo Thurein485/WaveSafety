@@ -11,14 +11,13 @@ html {
 
 body {
     margin: 0;
-    background: #ffffff;
+    background: #fff;
     color: #24301b;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
 
-button,
-input {
+button, input {
     font: inherit;
 }
 
@@ -30,7 +29,7 @@ a {
 .hero {
     padding: 65px 7%;
     background: #2a4700;
-    color: #ffffff;
+    color: #fff;
     overflow: hidden;
 }
 
@@ -38,7 +37,7 @@ a {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1.1fr .9fr;
     align-items: center;
     gap: 65px;
 }
@@ -51,9 +50,9 @@ a {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 24px;
+    margin: 0 0 24px;
     padding: 9px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255,255,255,.25);
     border-radius: 30px;
     color: #f6d65b;
     font-size: 11px;
@@ -63,7 +62,7 @@ a {
 
 .hero h1 {
     margin: 0 0 22px;
-    font-size: clamp(46px, 5.5vw, 72px);
+    font-size: clamp(46px,5.5vw,72px);
     font-weight: 900;
     line-height: 1.05;
     letter-spacing: -2px;
@@ -75,7 +74,7 @@ a {
 
 .hero-description {
     max-width: 510px;
-    margin-bottom: 28px;
+    margin: 0 0 28px;
     color: #e3e9d8;
     font-size: 16px;
     line-height: 1.9;
@@ -98,7 +97,7 @@ a {
     color: #2a300f;
     font-size: 14px;
     font-weight: 800;
-    transition: background 0.2s, transform 0.2s;
+    transition: background .2s, transform .2s;
 }
 
 .hero-button:hover {
@@ -108,7 +107,7 @@ a {
 }
 
 .hero-link {
-    color: #ffffff;
+    color: #fff;
     font-size: 14px;
     font-weight: 700;
     text-decoration: underline;
@@ -132,110 +131,170 @@ a {
     color: #f6d65b;
 }
 
-.hero-info-card {
+/* live dashboard */
+.live-dashboard {
+    min-width: 0;
     padding: 28px;
-    border-radius: 18px;
-    background: #ffffff;
-    color: #26351b;
-    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 24px;
+    box-shadow: 0 18px 45px rgba(0,0,0,.15);
 }
 
-.hero-card-heading {
+.live-dashboard-header {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 24px;
+    gap: 12px;
+    margin-bottom: 25px;
 }
 
-.hero-icon {
+.live-dashboard-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 53px;
-    height: 53px;
+    width: 46px;
+    height: 46px;
     flex-shrink: 0;
-    border-radius: 14px;
-    background: #edf3e3;
-    color: #2a4700;
-    font-size: 23px;
+    background: rgba(255,255,255,.12);
+    border-radius: 13px;
+    color: #ffd166;
+    font-size: 21px;
 }
 
-.hero-card-small {
-    margin: 0 0 4px;
-    color: #71834e;
+.dashboard-label {
+    margin: 0 0 5px;
+    color: #dce8c8;
     font-size: 10px;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: 1.2px;
 }
 
-.hero-card-heading h2 {
+.live-dashboard-header h2 {
     margin: 0;
-    font-size: 24px;
-    font-weight: 800;
+    color: #fff;
+    font-size: 19px;
+    line-height: 1.3;
 }
 
-.hero-step {
-    display: grid;
-    grid-template-columns: 36px 1fr 25px;
-    align-items: start;
-    gap: 13px;
-    padding: 20px 0;
-    border-top: 1px solid #e8ecdf;
-}
-
-.step-number {
+.live-badge {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
-    background: #f5e8ad;
-    color: #2a4700;
-    font-size: 12px;
-    font-weight: 900;
+    gap: 6px;
+    margin-left: auto;
+    color: #d8f5b0;
+    font-size: 11px;
+    font-weight: 700;
 }
 
-.hero-step h3 {
-    margin: 2px 0 5px;
-    font-size: 15px;
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #9bd65a;
+    border-radius: 50%;
+}
+
+.dashboard-clock {
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,.18);
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.dashboard-clock p {
+    margin: 0 0 8px;
+    color: #dce8c8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#live-time {
+    font-size: clamp(32px,4vw,46px);
     font-weight: 800;
+    letter-spacing: 1px;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
 }
 
-.hero-step p {
+#live-date {
+    margin-top: 5px;
+    color: #e3ead9;
+    font-size: 13px;
+}
+
+.dashboard-tip {
+    margin-top: 22px;
+    padding: 18px;
+    background: rgba(255,255,255,.09);
+    border-radius: 16px;
+}
+
+.tip-heading {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #ffd166;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .7px;
+}
+
+.dashboard-tip h3 {
+    margin: 13px 0 8px;
+    color: #fff;
+    font-size: 19px;
+    line-height: 1.4;
+}
+
+.dashboard-tip p {
     margin: 0;
-    color: #68715d;
-    font-size: 12px;
+    color: #e3ead9;
+    font-size: 13px;
     line-height: 1.7;
 }
 
-.hero-step > i {
-    margin-top: 8px;
-    color: #82945f;
-    font-size: 19px;
-}
-
-.hero-card-footer {
+#next-tip {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 5px;
-    padding: 14px;
+    margin-top: 18px;
+    padding: 11px 15px;
+    border: 0;
     border-radius: 9px;
-    background: #f3f6ed;
-    color: #2a4700;
+    background: #f49a27;
+    color: #203900;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#next-tip:hover {
+    background: #ffd166;
+}
+
+#next-tip:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
+.dashboard-footer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 20px;
+    color: #dce8c8;
     font-size: 12px;
-    font-weight: 800;
 }
 
-.hero-card-footer i {
-    color: #df9225;
+.dashboard-footer i {
+    color: #ffd166;
 }
 
-/* preparation */
-.preparation-section {
+/* shared sections */
+.preparation-section,
+.safety-section {
     padding: 75px 7%;
-    background: #ffffff;
+    background: #fff;
 }
 
 .section-heading {
@@ -256,7 +315,7 @@ a {
 .checklist-main h2 {
     margin: 0 0 12px;
     color: #2a4700;
-    font-size: clamp(27px, 3vw, 38px);
+    font-size: clamp(27px,3vw,38px);
     font-weight: 900;
     line-height: 1.25;
 }
@@ -267,9 +326,10 @@ a {
     font-size: 14px;
 }
 
-.action-grid {
+.action-grid,
+.safety-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3,minmax(0,1fr));
     gap: 22px;
     max-width: 1200px;
     margin: 0 auto;
@@ -283,17 +343,17 @@ a {
     padding: 27px;
     border: 1px solid #e8ecdf;
     border-radius: 15px;
-    background: #ffffff;
+    background: #fff;
     color: #24301b;
     text-align: left;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    transition: transform .2s,box-shadow .2s,border-color .2s;
 }
 
 .action-card:hover,
 .action-card.active {
     border-color: #9bad7d;
-    box-shadow: 0 12px 30px rgba(42, 71, 0, 0.1);
+    box-shadow: 0 12px 30px rgba(42,71,0,.1);
     transform: translateY(-4px);
 }
 
@@ -307,7 +367,8 @@ a {
     outline-offset: 4px;
 }
 
-.action-icon {
+.action-icon,
+.safety-icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -380,6 +441,10 @@ a {
     border-left: 5px solid #2a4700;
     border-radius: 13px;
     background: #f8faf4;
+}
+
+.tip-panel.open {
+    display: block;
 }
 
 .tip-panel-title {
@@ -476,7 +541,7 @@ a {
 
 .checklist-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+    grid-template-columns: minmax(0,1.5fr) minmax(280px,.8fr);
     align-items: start;
     gap: 35px;
     max-width: 1200px;
@@ -499,35 +564,28 @@ a {
 }
 
 .checklist-items {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
+    display: grid;
+    gap: 12px;
 }
 
 .checklist-item {
     display: flex;
     align-items: center;
-    gap: 14px;
-    min-height: 59px;
-    padding: 15px;
-    border: 1px solid #e4e9dc;
+    gap: 13px;
+    padding: 16px;
+    border: 1px solid #e2e8d8;
     border-radius: 10px;
-    background: #ffffff;
-    color: #39432d;
+    background: #fff;
+    color: #35402b;
     font-size: 14px;
     cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-}
-
-.checklist-item:hover {
-    border-color: #a7b88a;
 }
 
 .checklist-item input {
     position: absolute;
+    opacity: 0;
     width: 1px;
     height: 1px;
-    opacity: 0;
 }
 
 .custom-check {
@@ -537,16 +595,15 @@ a {
     width: 23px;
     height: 23px;
     flex-shrink: 0;
-    border: 2px solid #bdc7af;
+    border: 2px solid #b7c3a6;
     border-radius: 6px;
     color: transparent;
-    font-size: 12px;
 }
 
 .checklist-item input:checked + .custom-check {
     border-color: #2a4700;
     background: #2a4700;
-    color: #ffffff;
+    color: #fff;
 }
 
 .checklist-item input:focus-visible + .custom-check {
@@ -555,13 +612,7 @@ a {
 }
 
 .checklist-item:has(input:checked) {
-    background: #f1f6e9;
-    border-color: #c7d7b3;
-}
-
-.checklist-item:has(input:checked) > span:last-child {
-    color: #68745a;
-    text-decoration: line-through;
+    background: #f4f8ed;
 }
 
 .checklist-buttons {
@@ -569,64 +620,58 @@ a {
 }
 
 .reset-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    padding: 11px 16px;
-    border: 1px solid #cfd7c4;
+    padding: 10px 14px;
+    border: 1px solid #cbd6bd;
     border-radius: 8px;
-    background: #ffffff;
-    color: #42542d;
+    background: #fff;
+    color: #2a4700;
     font-size: 13px;
     font-weight: 700;
     cursor: pointer;
 }
 
 .reset-button:hover {
-    border-color: #2a4700;
     background: #edf3e4;
 }
 
 .progress-card {
-    padding: 28px;
-    border: 1px solid #e5e9de;
+    padding: 25px;
+    border: 1px solid #e1e7d7;
     border-radius: 16px;
-    background: #ffffff;
+    background: #fff;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(42, 71, 0, 0.04);
 }
 
 .progress-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 49px;
-    height: 49px;
-    margin: 0 auto 15px;
-    border-radius: 14px;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    border-radius: 13px;
     background: #eaf1df;
     color: #2a4700;
     font-size: 21px;
 }
 
-.progress-label {
-    margin-bottom: 18px;
-    color: #788566;
-    font-size: 11px;
+.progress-label,
+.reward-label {
+    margin: 0 0 12px;
+    color: #71834e;
+    font-size: 10px;
     font-weight: 800;
     letter-spacing: 1.5px;
 }
 
 .progress-ring {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 165px;
-    height: 165px;
-    margin: 0 auto 20px;
+    display: grid;
+    place-items: center;
+    width: 150px;
+    height: 150px;
+    margin: 18px auto;
     border-radius: 50%;
-    background: conic-gradient(#2a4700 0deg, #e7ecdf 0deg);
-    transition: background 0.25s;
+    background: conic-gradient(#2a4700 0%,#e7ecdf 0);
 }
 
 .progress-ring-inner {
@@ -634,359 +679,270 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 135px;
-    height: 135px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    background: #ffffff;
+    background: #fff;
 }
 
 .progress-ring-inner strong {
     color: #2a4700;
-    font-size: 34px;
-    font-weight: 900;
-    line-height: 1.3;
+    font-size: 30px;
 }
 
 .progress-ring-inner span {
-    color: #7b8371;
-    font-size: 12px;
+    color: #7b826f;
+    font-size: 11px;
 }
 
-.progress-card h3 {
-    margin: 0 0 8px;
+.progress-card > h3 {
+    margin: 8px 0;
     color: #2a4700;
-    font-size: 18px;
-    font-weight: 800;
+    font-size: 17px;
 }
 
 .progress-card > p:not(.progress-label) {
-    min-height: 43px;
-    margin: 0;
-    color: #77806d;
-    font-size: 13px;
-    line-height: 1.7;
+    color: #737a6b;
+    font-size: 12px;
 }
 
-.progress-track {
-    width: 100%;
+.progress-track,
+.points-track {
     height: 8px;
-    margin: 20px 0;
     overflow: hidden;
     border-radius: 20px;
-    background: #e9eddf;
+    background: #e9eee2;
 }
 
-.progress-bar {
-    width: 0%;
+.progress-bar,
+.points-bar {
+    width: 0;
     height: 100%;
-    border-radius: 20px;
+    border-radius: inherit;
     background: #2a4700;
-    transition: width 0.25s;
+    transition: width .2s;
 }
 
 .progress-tip {
     display: flex;
     align-items: flex-start;
     gap: 10px;
+    margin-top: 18px;
     padding: 13px;
     border-radius: 9px;
-    background: #fff5d1;
-    color: #6b581c;
-    text-align: left;
+    background: #f3f6ed;
+    color: #5f6c4c;
     font-size: 12px;
-    line-height: 1.7;
+    text-align: left;
 }
 
 .progress-tip i {
-    margin-top: 3px;
-    color: #bd8b16;
+    color: #d88b20;
 }
 
-/* reward */
 .reward-card {
     display: flex;
-    align-items: flex-start;
     gap: 13px;
-    margin-top: 18px;
-    padding: 17px;
-    border: 1px dashed #cbd4bd;
-    border-radius: 12px;
-    background: #f8faf4;
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #e7ecdf;
     text-align: left;
-    transition: background 0.2s, border-color 0.2s;
 }
 
 .reward-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
     flex-shrink: 0;
     border-radius: 12px;
-    background: #e8ecdf;
-    color: #778566;
-    font-size: 21px;
+    background: #fff2d7;
+    color: #b47a16;
 }
 
 .reward-text {
-    flex: 1;
     min-width: 0;
+    flex: 1;
 }
 
 .reward-label {
-    margin: 0 0 5px;
-    color: #778566;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.2px;
+    margin-bottom: 5px;
 }
 
 .reward-text h3 {
     margin: 0 0 6px;
     color: #2a4700;
-    font-size: 15px;
-    font-weight: 900;
+    font-size: 16px;
 }
 
-.reward-text > p:not(.reward-label) {
-    margin: 0;
-    color: #737a6b;
+.reward-text > p {
+    margin: 0 0 12px;
+    color: #747b6c;
     font-size: 12px;
-    line-height: 1.7;
-}
-
-.reward-card.earned {
-    border: 1px solid #e4bd45;
-    background: #fff7d9;
-}
-
-.reward-card.earned .reward-icon {
-    background: #f4d66c;
-    color: #6c4a00;
-}
-
-.reward-card.earned .reward-label {
-    color: #946900;
-}
-
-/* points */
-.points-display {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 15px;
-    color: #2a4700;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.points-display i {
-    color: #e5a52d;
-}
-
-#points-total {
-    font-size: 23px;
-    font-weight: 900;
-}
-
-.points-track {
-    width: 100%;
-    height: 7px;
-    margin-top: 10px;
-    overflow: hidden;
-    border-radius: 20px;
-    background: #e5e9dc;
-}
-
-.points-bar {
-    width: 0%;
-    height: 100%;
-    border-radius: 20px;
-    background: #e5a52d;
-    transition: width 0.25s;
-}
-
-.reward-text .points-next {
-    margin: 8px 0 0;
-    color: #737a6b;
-    font-size: 11px;
     line-height: 1.6;
 }
 
-/* safety tips */
-.safety-section {
-    padding: 75px 7%;
-    background: #ffffff;
+.points-display {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 10px 0;
+    color: #6b771f;
+    font-size: 12px;
 }
 
-.safety-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-    max-width: 1200px;
-    margin: 0 auto;
+.points-display span:first-of-type {
+    color: #2a4700;
+    font-size: 18px;
+    font-weight: 900;
 }
 
+.points-next {
+    margin-top: 9px !important;
+    font-size: 11px !important;
+}
+
+/* safety cards */
 .safety-card {
     padding: 25px;
     border: 1px solid #e8ecdf;
-    border-radius: 13px;
-    background: #ffffff;
+    border-radius: 15px;
+    background: #fff;
 }
 
 .safety-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
     margin-bottom: 18px;
-    border-radius: 13px;
-    font-size: 21px;
 }
 
 .safety-card h3 {
     margin: 0 0 10px;
     color: #2a4700;
-    font-size: 17px;
-    font-weight: 800;
+    font-size: 18px;
 }
 
 .safety-card p {
     margin: 0;
     color: #737a6b;
     font-size: 13px;
-    line-height: 1.9;
+    line-height: 1.8;
 }
 
 /* emergency reminder */
 .emergency-section {
     display: flex;
     align-items: center;
-    gap: 23px;
-    max-width: 1200px;
-    margin: 0 auto 70px;
-    padding: 30px;
-    border-radius: 15px;
-    background: #2a4700;
-    color: #ffffff;
+    gap: 22px;
+    margin: 0 7% 70px;
+    padding: 28px;
+    border-radius: 16px;
+    background: #f2f7f0;
 }
 
 .emergency-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 58px;
-    height: 58px;
+    width: 55px;
+    height: 55px;
     flex-shrink: 0;
     border-radius: 15px;
-    background: #fff0d5;
-    color: #c77b12;
-    font-size: 25px;
+    background: #fff0df;
+    color: #c87818;
+    font-size: 24px;
 }
 
 .emergency-text {
-    flex-grow: 1;
+    flex: 1;
 }
 
 .emergency-text .section-label {
-    color: #f6d65b;
+    margin-bottom: 4px;
 }
 
 .emergency-text h2 {
-    margin: 0 0 7px;
-    font-size: 23px;
-    font-weight: 900;
+    margin: 0 0 6px;
+    color: #2a4700;
+    font-size: 22px;
 }
 
 .emergency-text > p:last-child {
     margin: 0;
-    color: #e2e9d8;
+    color: #737a6b;
     font-size: 13px;
-    line-height: 1.8;
 }
 
 .emergency-button {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 10px;
-    flex-shrink: 0;
-    padding: 13px 17px;
-    border-radius: 8px;
-    background: #f4a43b;
-    color: #2a300f;
+    padding: 12px 16px;
+    border-radius: 9px;
+    background: #2a4700;
+    color: #fff;
     font-size: 13px;
-    font-weight: 800;
-    transition: background 0.2s;
+    font-weight: 700;
 }
 
 .emergency-button:hover {
-    background: #ffc45d;
-    color: #2a300f;
+    background: #3d6108;
+    color: #fff;
 }
 
-/* toast */
+
 .toast-message {
     position: fixed;
-    right: 25px;
-    bottom: 25px;
+    right: 20px;
+    bottom: 20px;
     z-index: 1000;
     display: flex;
     align-items: center;
-    gap: 11px;
-    max-width: calc(100% - 40px);
-    padding: 15px 20px;
-    border-radius: 10px;
+    gap: 8px;
+    max-width: 260px;
+    padding: 10px 14px;
+    border-radius: 8px;
     background: #2a4700;
-    color: #ffffff;
-    font-size: 13px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s, visibility 0.2s;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.2s, transform 0.2s;
 }
 
 .toast-message.show {
     opacity: 1;
-    visibility: visible;
+    transform: translateY(0);
 }
 
 .toast-message i {
     color: #f6d65b;
+    font-size: 13px;
+    flex-shrink: 0;
 }
+
 
 /* responsive */
 @media (max-width: 900px) {
-    .hero {
-        padding: 55px 5%;
-    }
-
     .hero-content {
         grid-template-columns: 1fr;
         gap: 35px;
-        max-width: 650px;
     }
 
     .hero-text {
-        padding: 0;
+        max-width: 700px;
     }
 
-    .hero-info-card {
+    .live-dashboard {
+        max-width: 650px;
         width: 100%;
-    }
-
-    .preparation-section,
-    .checklist-section,
-    .safety-section {
-        padding: 60px 5%;
     }
 
     .action-grid,
     .safety-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2,minmax(0,1fr));
     }
 
     .checklist-layout {
@@ -994,79 +950,42 @@ a {
     }
 
     .progress-card {
-        max-width: 430px;
+        max-width: 600px;
         width: 100%;
         margin: 0 auto;
-    }
-
-    .emergency-section {
-        margin: 0 5% 55px;
-        flex-wrap: wrap;
-    }
-
-    .emergency-text {
-        min-width: 60%;
-    }
-
-    .emergency-button {
-        margin-left: 81px;
     }
 }
 
 @media (max-width: 560px) {
     .hero {
-        padding: 40px 6%;
+        padding: 48px 6%;
     }
 
     .hero h1 {
         font-size: 46px;
-        letter-spacing: -1.5px;
     }
 
-    .hero-description {
-        font-size: 14px;
-    }
-
-    .hero-info-card {
+    .live-dashboard {
         padding: 20px;
     }
 
-    .hero-card-heading h2 {
-        font-size: 21px;
+    .live-dashboard-header h2 {
+        font-size: 16px;
     }
 
-    .hero-step {
-        grid-template-columns: 32px 1fr 20px;
-        gap: 10px;
-    }
-
-    .hero-step p {
-        font-size: 11px;
-    }
-
-    .hero-buttons {
-        gap: 16px;
-    }
-
-    .hero-button {
-        padding: 13px 15px;
-        font-size: 13px;
+    .dashboard-tip {
+        padding: 15px;
     }
 
     .preparation-section,
     .checklist-section,
     .safety-section {
-        padding: 50px 6%;
-    }
-
-    .section-heading {
-        margin-bottom: 28px;
+        padding: 55px 6%;
     }
 
     .action-grid,
     .safety-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
     }
 
     .action-card {
@@ -1074,71 +993,21 @@ a {
     }
 
     .tip-panel {
-        padding: 23px 18px;
-    }
-
-    .tip-panel-title {
-        align-items: flex-start;
-        gap: 11px;
+        padding: 24px 20px;
     }
 
     .tip-panel-title h3 {
         font-size: 18px;
     }
 
-    .tip-panel-title > i {
-        width: 42px;
-        height: 42px;
-        font-size: 18px;
-    }
-
-    .tip-panel li {
-        font-size: 13px;
-    }
-
-    .close-panel {
-        top: 12px;
-        right: 12px;
-    }
-
-    .checklist-item {
-        padding: 13px 11px;
-        font-size: 13px;
-    }
-
-    .progress-card {
-        padding: 24px 20px;
+    .checklist-layout {
+        gap: 25px;
     }
 
     .emergency-section {
+        flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
         margin: 0 6% 45px;
-        padding: 22px;
-    }
-
-    .emergency-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-    }
-
-    .emergency-text {
-        min-width: 0;
-        width: calc(100% - 60px);
-    }
-
-    .emergency-text h2 {
-        font-size: 20px;
-    }
-
-    .emergency-button {
-        margin-left: 60px;
-    }
-
-    .toast-message {
-        right: 15px;
-        bottom: 15px;
-        font-size: 12px;
+        padding: 23px;
     }
 }

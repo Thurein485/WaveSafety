@@ -34,7 +34,6 @@
                         Start preparing
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
-
                     <a href="#checklist" class="hero-link">View checklist</a>
                 </div>
 
@@ -44,47 +43,47 @@
                 </div>
             </div>
 
-            <div class="hero-info-card">
-                <div class="hero-card-heading">
-                    <div class="hero-icon">
-                        <i class="fa-solid fa-house-circle-check"></i>
+            <!-- live preparedness dashboard -->
+            <div class="live-dashboard">
+                <div class="live-dashboard-header">
+                    <div class="live-dashboard-icon">
+                        <i class="fa-solid fa-clock"></i>
                     </div>
                     <div>
-                        <p class="hero-card-small">YOUR SAFETY STARTS HERE</p>
-                        <h2>Flood readiness</h2>
+                        <p class="dashboard-label">WAVESAFETY • LIVE DASHBOARD</p>
+                        <h2>Your safety, at a glance.</h2>
                     </div>
+                    <span class="live-badge">
+                        <span class="live-dot"></span> LIVE
+                    </span>
                 </div>
 
-                <div class="hero-step">
-                    <div class="step-number">01</div>
-                    <div>
-                        <h3>Protect your home</h3>
-                        <p>Keep important items safe and know your home's risks.</p>
-                    </div>
-                    <i class="fa-solid fa-house"></i>
+                <div class="dashboard-clock">
+                    <p>CURRENT TIME</p>
+                    <div id="live-time">00:00:00</div>
+                    <div id="live-date">Loading date...</div>
                 </div>
 
-                <div class="hero-step">
-                    <div class="step-number">02</div>
-                    <div>
-                        <h3>Pack emergency supplies</h3>
-                        <p>Prepare food, water, medicine, and a flashlight.</p>
+                <div class="dashboard-tip">
+                    <div class="tip-heading">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span id="tip-number">SAFETY TIP</span>
                     </div>
-                    <i class="fa-solid fa-kit-medical"></i>
+
+                    <h3 id="tip-title">Keep important documents dry.</h3>
+                    <p id="tip-description">
+                        Store important documents in waterproof bags before flooding begins.
+                    </p>
+
+                    <button type="button" id="next-tip">
+                        Next safety tip
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
 
-                <div class="hero-step">
-                    <div class="step-number">03</div>
-                    <div>
-                        <h3>Make a family plan</h3>
-                        <p>Choose a safe place and plan how to contact each other.</p>
-                    </div>
-                    <i class="fa-solid fa-people-group"></i>
-                </div>
-
-                <div class="hero-card-footer">
+                <div class="dashboard-footer">
                     <i class="fa-solid fa-lightbulb"></i>
-                    Prepare early. Act safely.
+                    Small steps today. Better safety tomorrow.
                 </div>
             </div>
         </div>
@@ -391,7 +390,7 @@
             <p>Monitor warnings from the Department of Meteorology and Hydrology and follow local emergency instructions.</p>
         </div>
 
-        <a href="#" target="_blank" rel="noopener noreferrer" class="emergency-button">
+        <a href="#" class="emergency-button">
             Official updates
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
         </a>
