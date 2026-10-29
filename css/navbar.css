@@ -458,6 +458,7 @@
 }
 
 .active-label {
+    transition: transform 0.25s ease;
     position: absolute;
     bottom: calc(100% + 12px);
     left: 50%;

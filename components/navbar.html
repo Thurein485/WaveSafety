@@ -87,21 +87,23 @@
 
 
     <!-- ==================== MOBILE BOTTOM NAVBAR ==================== -->
-    <nav class="mobile-bottom-nav d-lg-none" aria-label="Mobile navigation">
+    <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
 
         <!-- Flood risks shortcut -->
         <a href="flood-risk.html" class="mobile-nav-item" aria-label="Flood Risks">
+            <span class="active-label" id="mobile_flood_risk">Flood Risks</span>
             <i class="bi bi-exclamation-triangle"></i>
         </a>
 
         <!-- Solutions shortcut -->
         <a href="solutions.html" class="mobile-nav-item" aria-label="Solutions">
+            <span class="active-label" id="mobile_solution">Solutions</span>
             <i class="bi bi-lightbulb"></i>
         </a>
 
         <!-- Home shortcut -->
         <a href="index.html" class="mobile-nav-item active" aria-label="Home">
-            <span class="active-label">Home</span>
+            <span class="active-label" id="mobile_home">Home</span>
             <span class="mobile-icon-circle">
                 <i class="bi bi-house-door-fill"></i>
             </span>
@@ -109,16 +111,19 @@
 
         <!-- Updates shortcut -->
         <a href="updates.html" class="mobile-nav-item" aria-label="Updates">
+            <span class="active-label" id="mobile_updates">Updates</span>
             <i class="bi bi-journal-text"></i>
         </a>
 
         <!-- Three dots open the sidebar -->
+         
         <button class="mobile-nav-item"
                 type="button"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#mobileSidebar"
                 aria-controls="mobileSidebar"
                 aria-label="Open menu">
+                <span class="active-label" id="mobile_more">More</span>
             <i class="bi bi-three-dots-vertical"></i>
         </button>
 
@@ -377,6 +382,8 @@
 
     <!-- Bootstrap JavaScript enables the collapse, sidebar, and modals -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
+   
+    <!-- JavaScript -->
+    <script src="../js/navbar.js"></script>
 </body>
 </html>
