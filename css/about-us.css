@@ -1,0 +1,225 @@
+
+body {
+    background: #f4edcf;
+    color: #263421;
+}
+
+/* Mission and Vision */
+
+.purpose-icon {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #293a20;
+    color: #f4edcf;
+    font-size: clamp(55px, 9vw, 110px);
+    border-radius: 10px;
+}
+
+.purpose-content {
+    position: relative;
+    margin-left: -12%;
+    padding: 25px;
+    background: #607840;
+    color: white;
+    border-radius: 10px;
+}
+
+.purpose-content h2 {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.purpose-content p {
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+/* Who We Are */
+
+.section-heading {
+    color: #293a20;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.team-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Members */
+
+.members-section {
+    padding: 35px 15px 60px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.members-title {
+    margin: 0 -15px 45px;
+    padding: 16px;
+    background: #293a20;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.members-carousel {
+    position: relative;
+    max-width: 850px;
+    margin: auto;
+}
+
+.members-track {
+    position: relative;
+    height: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-card {
+    position: absolute;
+    width: 34%;
+    padding: 10px 10px 20px;
+    border-radius: 12px;
+    background: #607840;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.member-card img {
+    width: 100%;
+    height: 245px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.member-role {
+    display: inline-block;
+    margin: 12px 0;
+    padding: 8px 22px;
+    border-radius: 10px;
+    background: #293a20;
+    font-weight: bold;
+}
+
+.member-card h3 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.member-card.center {
+    z-index: 3;
+    opacity: 1;
+    transform: translateX(0) scale(1.08);
+    background: #293a20;
+}
+
+.member-card.left {
+    z-index: 2;
+    opacity: 0.85;
+    transform: translateX(-85%) scale(0.85);
+}
+
+.member-card.right {
+    z-index: 2;
+    opacity: 0.85;
+    transform: translateX(85%) scale(0.85);
+}
+
+.member-card.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.6);
+}
+
+/* Navigation Buttons */
+
+.member-arrow {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: #293a20;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.member-arrow:hover {
+    background: #607840;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .purpose-icon {
+        min-height: 150px;
+    }
+
+    .purpose-content {
+        padding: 15px;
+        margin-left: -10%;
+    }
+
+    .purpose-content h2 {
+        font-size: 20px;
+    }
+
+    .purpose-content p {
+        font-size: 13px;
+    }
+
+    .members-track {
+        height: 330px;
+    }
+
+    .member-card {
+        width: 65%;
+    }
+
+    .member-card img {
+        height: 190px;
+    }
+
+    .member-card.left {
+        transform: translateX(-53%) scale(0.75);
+    }
+
+    .member-card.right {
+        transform: translateX(53%) scale(0.75);
+    }
+
+    .member-card h3 {
+        font-size: 15px;
+    }
+
+    .member-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+
+    .team-image {
+        height: 250px;
+    }
+}
